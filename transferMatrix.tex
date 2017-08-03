@@ -1,0 +1,76 @@
+\documentclass[ignorenonframetext]{beamer}
+\usepackage{lmodern}
+\usepackage[utf8x]{inputenc}
+\usepackage[ngerman]{babel}  		%sprache
+\usepackage[T1]{fontenc}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{tikz}
+%\usepackage{pgfplots}
+\usepackage{subfigure}
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{filecontents}
+\usepackage{multirow}
+\usepackage{etex}
+\usepackage{epstopdf}
+
+\usetheme{default}
+\definecolor{TUBAFblue}{RGB}{0,100,186}
+\usecolortheme[named=TUBAFblue]{structure}
+\makeatletter
+\setbeamercolor{frametitle}{fg=TUBAFblue, bg=white}
+\setbeamercolor{title}{fg=TUBAFblue}
+\setbeamercolor{palette primary}{fg=black, bg=white}
+\setbeamercolor{palette secondary}{fg=gray!90!white, bg=white}
+\setbeamercolor{palette tertiary}{fg=white, bg=TUBAFblue}
+\makeatother
+
+\usetikzlibrary{positioning}
+
+\usepackage[absolute,overlay]{textpos}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+
+\beamersetuncovermixins{\opaqueness<1>{25}}{\opaqueness<2->{15}}
+
+
+\setbeamerfont{header_font_subsection}{size*={12.25}{1.25}}
+\setbeamerfont{header_font_subsubsection}{size*={6.25}{1.25}}
+ 
+\setbeamertemplate{navigation symbols}{}
+
+\begin{document}
+\begin{frame}
+\frametitle{\vspace{0.50cm}{\hspace{1.5cm}
+Transfer Matrix
+}}
+\framesubtitle{\hspace{1.55cm}
+Transmission Loss
+}
+  \begin{align*}
+	\begin{matrix}
+  	p_{in}\\
+  	u_{in} 
+    \end{matrix}
+  	&=
+  	\underbrace{ 
+  	\left[
+	\begin{matrix}
+	A & B\\
+	C & D
+	\end{matrix} 
+	\right]
+	}_{TL}
+	\begin{matrix}
+  	p_{out}\\
+  	u_{out} 
+    \end{matrix}
+	\\
+	TL &= 10\, \text{log}_{10}\left(\frac{1}{4}\left|A+B\frac{S}{\rho c}+C\frac{\rho c}{S}+D\right|^2\right)
+  \end{align*}
+\end{frame}
+
+
+\end{document}
